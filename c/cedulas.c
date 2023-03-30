@@ -1,55 +1,52 @@
 #include<stdio.h>
 #include<math.h>
 
+/*
+função para arredondar as variaveis  
+a partir de 3 casas decimais 
+e a contagem de cedulas ser correta
+como meu calculo depende dos inteiros
+variaveis com casas decimais muito grandes 
+causavam erro no meu calculo
+*/
+
+double rondo(double number)
+{
+    return (number >= 0) ? (number + 0.001) : (number - 0.001);
+}
+
 int main(){
 
+    //declaração de variável
     int n; 
     double cem, cinq, vinte, dez, cinco, dois, um;
 
+    //input
+    scanf("%d", &n);
 
-        scanf("%d", &n);
+    /*calculo buscando retirar os inteiros para quantificar as cedulas*/
+    cem = rondo((double)n/100); //aplicando roundo em todas os calculos se for necessario
+    cinq = rondo((fmod(cem, 1)*100)/50); //aplicando fmod para retirar os inteiros e contabilizar as cedulas
+    vinte = rondo((fmod(cinq, 1)*50/20));
+    dez = rondo((fmod(vinte, 1)*20)/10);
+    cinco = rondo((fmod(dez, 1)*10)/5);
+    dois = rondo((fmod(cinco, 1)*5)/2);
+    um = rondo((fmod(dois, 1)*2));
 
-        cem = (double)n/100;
-        cinq = (fmod(cem, 1)*100)/50;
-        vinte = (fmod(cinq, 1)*50/20);
-        dez = (fmod(vinte, 1)*20)/10;
-        cinco = (fmod(dez, 1)*10)/5;
-        dois = (fmod(cinco, 1)*5)/2;
-        um = (fmod(dois, 1)*2);
-
-
-        printf("%d\n", n);
-        printf("cem: %.0f\n", floor(cem));
-        printf("cinq: %.0f\n", floor(cinq));
-        printf("vinte: %.0f\n", floor(vinte));
-        printf("dez: %.0f\n", floor(dez));
-        printf("cinco: %.0f\n", floor(cinco));
-        printf("dois: %.0f\n", floor(dois));
-
-        printf("um: %d\n", (int)um);
-        printf("um: %lf\n", um);
-
-
-
-
-/*
-        cem = (float)n/100;
-        cinq = ((cem*100)-((int)cem*100))/50;
-        vinte = ((cinq*100)-((int)cinq)*100)/20;
-        dez = ((vinte*100)-((int)vinte*100))/10;
-        cinco = ((dez*100)-((int)dez*100))/5;
-        dois = ((cinco*100)-((int)cinco*100))/2;
-        um = ((dois*100)-((int)dois*100));
+/*  aplicando floor para retirar o 
+    primeiro inteiro encontrado menor 
+    do que o valor resultado da operação
 */
-/*
-    printf("%i nota(s) de R$ 100,00\n", (int)cem);
-    printf("%d nota(s) de R$ 50,00\n", (int)cinq);
-    printf("%d nota(s) de R$ 20,00\n", (int)vinte);
-    printf("%d nota(s) de R$ 10,00\n", (int)dez);
-    printf("%d nota(s) de R$ 5,00\n", (int)cinco);
-    printf("%d nota(s) de R$ 2,00\n", (int)dois);
-    printf("%d nota(s) de R$ 1,00\n", (int)um);
-*/
+    //output
+    printf("%d\n", n);
+    printf("%.0f nota(s) de R$ 100,00\n", floor(cem));  
+    printf("%.0f nota(s) de R$ 50,00\n", floor(cinq));
+    printf("%.0f nota(s) de R$ 20,00\n", floor(vinte));
+    printf("%.0f nota(s) de R$ 10,00\n", floor(dez));
+    printf("%.0f nota(s) de R$ 5,00\n", floor(cinco));
+    printf("%.0f nota(s) de R$ 2,00\n", floor(dois));
+    printf("%.0f nota(s) de R$ 1,00\n", um);
+
 
     return 0;
 
