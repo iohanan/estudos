@@ -15,12 +15,13 @@ double rondo(double number)
     return (number >= 0) ? (number + 0.001) : (number - 0.001);
 }
 
+
 int main(){
 
     //declaração de variável
 
-    double n, cem, cinq, vinte, dez, cinco, dois;
-    double cem2, cinq2, vinte2, dez2, cinco2, dois2, um2;
+    double n, cem, cinq, vinte, dez, cinco, dois, um;
+    double cinq2, vinte2, dez2, cinco2, um2, moedas;
 
     //input
     scanf("%lf", &n);
@@ -35,17 +36,13 @@ int main(){
     dois = rondo((fmod(cinco, 1)*5)/2);
 
 
-    //moedas
-    um = rondo((fmod(dois, 1)*2));
-    cem2 = rondo(fmod(n, 1)); 
-    cinq2 = rondo((fmod(cem2, 1))/50);
-    vinte2 = rondo((fmod(cinq2, 1)*50/25));
-    dez2 = rondo((fmod(vinte2, 1)*25)/10);
-    cinco2 = rondo((fmod(dez2, 1)*10)/5);
-    um2 = rondo((fmod(cinco2, 1)*5));
+    
+
+
+
 
 /*  aplicando floor para retirar o 
-    primeiro inteiro encontrado menor 
+    primeiro inteiro encontrado menor       
     do que o valor resultado da operação
 */
     //output
@@ -57,14 +54,51 @@ int main(){
     printf("%.0f nota(s) de R$ 5,00\n", floor(cinco));
     printf("%.0f nota(s) de R$ 2,00\n", floor(dois));
 
+    //moedas
     printf("MOEDAS:\n");
-    printf("%.0f nota(s) de R$ 1.00\n", floor(cem2));  
-    printf("%.0f nota(s) de R$ 0.50\n", floor(cinq2));
-    printf("%.0f nota(s) de R$ 0.20\n", floor(vinte2));
-    printf("%.0f nota(s) de R$ 0.10\n", floor(dez2));
-    printf("%.0f nota(s) de R$ 0.05\n", floor(cinco2));
-    printf("%.0f nota(s) de R$ 0.01\n", um2);
 
+    um = rondo((fmod(dois, 1)*2));
+    printf("%.0f nota(s) de R$ 1,00\n", floor(um));
+
+    moedas = rondo(fmod(n, 1));
+
+    if ((moedas/0.5)>0){
+        cinq2 = moedas/0.5;
+        printf("%.0f nota(s) de R$ 0,5\n", floor(cinq2));
+        
+        moedas = moedas-0.5;
+
+        if((moedas/0.25)>0){
+            vinte2 = moedas/0.25;
+            printf("%.0f nota(s) de R$ 0,25\n", floor(vinte2));     
+            moedas = (moedas-0.25);
+        }else{
+
+        } printf("0 moedas(s) de R$ 0,25\n");
+
+        if((moedas/0.1)>0){
+            dez2 = moedas/0.1;
+            printf("%.0f nota(s) de R$ 0,25\n", floor(dez2));
+            
+            moedas = (moedas-((floor(dez2))*0.1));
+
+        } else{
+            printf("0 nota(s) de R$ 0,25\n");
+
+        }
+
+        if((moedas/0.01)>0){
+            um2 = moedas/0.01;
+            printf("%.0f nota(s) de R$ 0,25\n", floor(um2));   
+        } else{
+            printf("0 nota(s) de R$ 0,25\n");   
+
+        }
+
+
+    } else{
+        printf("0 moedas(s) de R$ 0,50\n");
+    }
 
     return 0;
 
