@@ -28,7 +28,9 @@ int main(){
 
 
     //notas
-    /*calculo buscando retirar os inteiros para quantificar as cedulas*/
+/*
+calculo buscando retirar os inteiros para quantificar as cedulas
+*/
     cem = rondo(floor(n)/100); //aplicando roundo em todas os calculos se for necessario
     cinq = rondo(fmod(cem, 1)*100)/50; //aplicando fmod para retirar os inteiros e contabilizar as cedulas
     vinte = rondo(fmod(cinq, 1)*50)/20;
