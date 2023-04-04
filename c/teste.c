@@ -1,15 +1,29 @@
 #include <stdio.h>
-#include <math.h>
+int main()
+{
+    int Hora_inicio, final, minuto_inicio, minuto_final, tempo_horatotal, tempo_minutototal;
+    scanf("%d %d %d %d", &Hora_inicio, &minuto_inicio, &final, &minuto_final);
 
-int main () {
-   float a, b;
-   int c;
-   a = 9.2;
-   b = 3.7;
-   c = 2;
-   printf("Remainder of %f / %d is %lf\n", a, c, fmod(a,c));
-   printf("Remainder of %f / %f is %lf\n", a, b, fmod(a,b));
-   printf("Remainder of %f / %f is %lf\n", a, b, fmod(a,100));
-   
-   return(0);
+    tempo_horatotal = final - Hora_inicio;
+
+    if (tempo_horatotal < 0)
+    {
+        tempo_horatotal = 24 + (final - Hora_inicio);
+    }
+
+ tempo_minutototal = minuto_final - minuto_inicio;
+ if (tempo_minutototal < 0)
+
+  {
+   tempo_minutototal = 60 + (minuto_final - minuto_inicio);
+   tempo_horatotal--;
+  }
+
+    if (Hora_inicio == final && minuto_inicio == minuto_final)
+
+    {
+        printf("O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)\n");
+    }
+    else printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", tempo_horatotal, tempo_minutototal);
+    return 0;
 }
