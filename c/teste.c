@@ -1,15 +1,21 @@
 #include <stdio.h>
-#include <math.h>
+double rondo(double number)
+{
+    return (number >= 0) ? (number + 0.001) : (number - 0.001);
+}
 
 int main () {
-   float a, b;
-   int c;
-   a = 9.2;
-   b = 3.7;
-   c = 2;
-   printf("Remainder of %f / %d is %lf\n", a, c, fmod(a,c));
-   printf("Remainder of %f / %f is %lf\n", a, b, fmod(a,b));
-   printf("Remainder of %f / %f is %lf\n", a, b, fmod(a,100));
+
+   int h1, m1;
+   float tempM, tempH;
+
+    scanf("%d", &h1);
+
+    tempH = rondo((h1/60));
+
+    printf("valor inteiro: %.0f\n", tempH);
+
+   
    
    return(0);
 }
