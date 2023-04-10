@@ -1,4 +1,5 @@
 #include <stdio.h>
+<<<<<<< HEAD
 double rondo(double number)
 {
     return (number >= 0) ? (number + 0.001) : (number - 0.001);
@@ -15,7 +16,5 @@ int main () {
 
     printf("valor inteiro: %.0f\n", tempH);
 
-   
-   
-   return(0);
+
 }

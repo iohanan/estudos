@@ -13,6 +13,7 @@ int main(){
 
     scanf("%d %d %d %d", &h1, &m1, &h2, &m2);
 
+<<<<<<< HEAD
 
     //convertendo minutos acima de 60 em horas
     if(m2>=60){
@@ -67,5 +68,7 @@ int main(){
 
     printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", hf, mf);
 
+
     return 0;
+    
 }
