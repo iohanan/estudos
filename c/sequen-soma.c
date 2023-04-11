@@ -1,8 +1,8 @@
 #include<stdio.h>
 
 int main(){
-
-    int i, m=1, n=1, a, b;
+    
+    int i, m, n, a, b;
 
         while(1){
                 scanf("%d %d", &m , &n);
