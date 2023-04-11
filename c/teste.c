@@ -1,18 +1,32 @@
 #include <stdio.h>
-
-double rondo(double number)
-{
-    return (number >= 0) ? (number + 0.001) : (number - 0.001);
-}
-
 int main () {
+    
+    
+    int i, j, a, n, number[30];
 
-   int h1, m1;
-   float tempM, tempH;
+    printf("Enter the value of N \n");
+    scanf("%d", &n);
+    printf("Enter the numbers \n");
 
-    scanf("%d", &h1);
+    for (i = 0; i < n; ++i)
+        scanf("%d", &number[i]);
 
-    tempH = rondo((h1/60));
+    for (i = 0; i < n; ++i)
+    {
+        for (j = i + 1; j < n; ++j)
+        {
+            if (number[i] > number[j])
+            {
+                a =  number[i];
+                number[i] = number[j];
+                number[j] = a;
+            }
+        }
+    }
+    
+    printf("The numbers arranged in ascending order are given below \n");
+    for (i = 0; i < n; ++i)
+        printf("%d\n", number[i]);
 
-    printf("valor inteiro: %.0f\n", tempH);
+    return 0;
 }
