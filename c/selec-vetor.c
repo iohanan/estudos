@@ -2,13 +2,20 @@
 
 int main(){
 
-    float n[100];
+    int dm=100;
+    double n[dm];
 
-    scanf("%f", &n[100]);
+    //laço para adicionar cada posição no vetor
 
-    for(int i=0; i<100; i++){
+    for(int i=0; i<dm; i++){
+    scanf("%lf", &n[i]);
+    }
+
+    //laço para printar na tela
+
+    for(int i=0; i<dm; i++){
         if(n[i]<=10){
-            printf("A[%d] = %f\n", i, n[i]);
+            printf("A[%d] = %.1lf\n", i, n[i]);
         }
     }
 
