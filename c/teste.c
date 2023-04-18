@@ -1,32 +1,38 @@
+/*
+  @autor: Malbolge;
+  @data: 30/07/2018;
+  @nome: Preenchimento de Vetor II;
+*/
+
 #include <stdio.h>
-int main () {
-    
-    
-    int i, j, a, n, number[30];
 
-    printf("Enter the value of N \n");
-    scanf("%d", &n);
-    printf("Enter the numbers \n");
+int main ()
+{
 
-    for (i = 0; i < n; ++i)
-        scanf("%d", &number[i]);
+  int n, i, x[1000], k;
 
-    for (i = 0; i < n; ++i)
+  scanf("%d", &n);
+
+  k = 0;
+
+  for (i = 0; i < 1000; i++)
+  {
+
+    x[i] = k;
+    k++;
+
+    if (k == n)
     {
-        for (j = i + 1; j < n; ++j)
-        {
-            if (number[i] > number[j])
-            {
-                a =  number[i];
-                number[i] = number[j];
-                number[j] = a;
-            }
-        }
-    }
-    
-    printf("The numbers arranged in ascending order are given below \n");
-    for (i = 0; i < n; ++i)
-        printf("%d\n", number[i]);
 
-    return 0;
+      k = 0;
+
+    }
+  }
+  
+  for (i = 0; i < 1000; i++)
+  {
+
+    printf("N[%d] = %d\n", i, x[i]);
+
+  }
 }
