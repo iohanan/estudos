@@ -9,66 +9,65 @@ atv 1435
 int main()
 {
     while(1){
-        int x, i, j, k, a=0, b=0, c=0, temp;  //controladores
+        int tamanhoM, linha, coluna, valorFinal, controlBorda=0, valorMatriz=0, temp;  //controladores
 
-        scanf("%d", &x);    //leitura do tamanho
+        scanf("%d", &tamanhoM);    //leitura do tamanho
 
         /*
-        DECLARAÇÃO DA MATRIZ TEM QUE SER FEITA 
-        DEPOIS DE DEFINIDO O VALOR DA VAR X
+        declaração da matriz deve ser feita 
+        após definido a var tamanhoM
         */
 
-        if (x==0)
+        if (tamanhoM==0)
         break;
         
-        int m[x][x];    //matriz
+        int m[tamanhoM][tamanhoM];    //matriz
 
-        temp=x;     //definindo o valor central da matriz para o break; do laço de preenchimento
+        temp=tamanhoM;     //definindo o valor final da matriz para o break; do laço de preenchimento
         if (temp%2==0)
         {
-            k=temp/2;
+            valorFinal=temp/2;
         }else
         {
             temp+=1;
-            k=temp/2;
+            valorFinal=temp/2;
         }
 
 
 
         while (1)       //laço de preenchimento das bordas até o valor central
         {   
-            for (i = c; i < x-c; i++) 
+            for (linha = controlBorda; linha < tamanhoM-controlBorda; linha++) 
             {
-                for (j = c; j < x-c; j++)
+                for (coluna = controlBorda; coluna < tamanhoM-controlBorda; coluna++)
                 {   
-                    if(i==a || j==x-(c+1) || j==a || i==x-(c+1))        //condição para alternar as bordas da matriz a cada repetição
+                    if(linha==controlBorda || linha==tamanhoM-(controlBorda+1) || coluna==controlBorda || coluna==tamanhoM-(controlBorda+1))        //condição para alternar as bordas da matriz a cada repetição
                     {   
-                        m[i][j]=b+1;
+                        m[linha][coluna]=valorMatriz+1;
                     }
                 }
 
             }
-            a++;
-            b++;
-            c++;
+            valorMatriz++;
+            controlBorda++;
             
-            if (b>k)
+            if (valorMatriz>valorFinal)
                 break;    
             
         }
         
 
 
-        for (i = 0; i < x; i++)     //print do vetor
+        for (linha = 0; linha < tamanhoM; linha++)     //print da matriz
         {   
-            for (j = 0; j < x; j++)
+            for (coluna = 0; coluna < tamanhoM; coluna++)
             {
-                if (j==0)
+                if (coluna==0)
                 {
-                    printf("%3d",m[i][j]);
+                    printf("%3d",m[linha][coluna]);
                 }else
                 {
-                    printf(" %3d", m[i][j]);
+                    printf(" %3d", m[linha][coluna]);
                 }
             }
             printf("\n");
