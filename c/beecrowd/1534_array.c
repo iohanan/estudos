@@ -19,10 +19,10 @@ int main()
         {
             for (j = 0; j < x; j++)
             {
-                if(j==x-(a+1) && i==a)        //digonal principal 1
+                if(j==x-(a+1) && i==a)        //digonal 2
                 {       
                 m[i][j]=2;
-                }else if(i==j)      //diagonal secundaria 2
+                }else if(i==j)      //diagonal 1
                 {
                     m[i][j]=1;
                 }else               //restante da matriz 3
