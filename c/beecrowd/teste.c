@@ -1,17 +1,29 @@
 #include <stdio.h>
 
-int main() {
-    int n;
-    while (scanf("%d", &n) != EOF) {
-        int i, j, k;
-        for (i = 0; i < n; i++) {
-            for (j = 0, k = i + 1; j < n; j++, k++) {
-                if (k > n) k = 1;
-                printf("%3d", k);
-            }
-            printf("\n");
+    int main() 
+    {
+        int x;
+        char jogada[5][9]={"pedra","papel","tesoura","lagarto","Spock"};
+        int index = 0;
+        char str1[9]={"pedra"};
+        // Enquanto os caracteres forem iguais, corre os vectores.
+        while( str1 == jogada[index] )
+        {
+            // Verifica se alguma das strings terminou.
+            // Se sim, sai do loop. Caso contrario, analisa o próximo carácter.
+            if( str1 == '\0' || jogada[index] == '\0' )
+                break;
+    
+            ++index;
         }
-        printf("\n");
-    }
-    return 0;
+
+        // Se ambos terminaram, as strings contidas são iguais.
+        if( str1 == '\0' && jogada[index] == '\0' )
+            x=1;
+        else
+            x=2;
+
+        printf("%d\n", x);
+
+        return 0;
 }
