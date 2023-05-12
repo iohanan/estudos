@@ -15,12 +15,13 @@ tesoura >papel/lagarto
 #include<string.h>
 
 int main()
-{
-   
     
+{
+    char jogada[5][8]={"pedra","papel","tesoura","lagarto","Spock"}
     char str1[8],str2[8];
     fgets(str1, 8, stdin);
     fgets(str2, 8, stdin);
+   
 
 
     if (strcmp(str1,str2)==0)
@@ -31,26 +32,23 @@ int main()
     return 0;
 }
 
-int resultado (char str1[8])
+int resultado (char string[8])
 {
- int x;
- char jogada[5][8]={"pedra","papel","tesoura","lagarto","Spock"}
- int index = 0;
-// Enquanto os caracteres forem iguais, corre os vectores.
-while( str1[index] == [index] )
-{
-    // Verifica se alguma das strings terminou.
-    // Se sim, sai do loop. Caso contrario, analisa o próximo carácter.
-    if( a[index] == '\0' || b[index] == '\0' )
-        break;
-    ++index;
-}
+    char jogada[5][8]={"pedra","papel","tesoura","lagarto","Spock"}
 
-// Se ambos terminaram, as strings contidas são iguais.
-if( a[index] == '\0' && b[index] == '\0' )
-    x=1;
-else
-    x=2;
+
+    for (i = 0; i < 6; i++)
+    {
+        for (j = 0; j < 8; j++)
+        {
+        strcmp(string, jogada[i][j])
+        if (strcmp==0)
+            break;
+        
+        }
+        
+    }
+    
 
 return x;
 }
