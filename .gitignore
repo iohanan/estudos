@@ -3,4 +3,4 @@
 #   configuração vscode
 .vscode
 #   arquivo de teste
-/teste.c
+**/teste.c
