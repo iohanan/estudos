@@ -1,2 +1,6 @@
+#   executaveis de programas
 *-out
+#   configuração vscode
 .vscode
+#   arquivo de teste
+**/teste
