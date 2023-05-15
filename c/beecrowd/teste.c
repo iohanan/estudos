@@ -45,12 +45,16 @@ int main ()
 
     printf("\n\n%s\n",sheldon);
     printf("%s\n",raj);
-
-    (strcmp(sheldon,opcoes[0])==0&&strcmp(raj,opcoes[2])==0||strcmp(raj,opcoes[3])==0) ?  printf("SHELDON GANHA\n") : printf("SHELDON PERDEU\n");
-    (strcmp(sheldon,opcoes[1])==0&&strcmp(raj,opcoes[0])==0||strcmp(raj,opcoes[4])==0) ?  printf("SHELDON GANHA\n") : printf("SHELDON PERDEU\n");
-    (strcmp(sheldon,opcoes[2])==0&&strcmp(raj,opcoes[1])==0||strcmp(raj,opcoes[3])==0) ?  printf("SHELDON GANHA\n") : printf("SHELDON PERDEU\n");
-    (strcmp(sheldon,opcoes[3])==0&&strcmp(raj,opcoes[4])==0||strcmp(raj,opcoes[1])==0) ?  printf("SHELDON GANHA\n") : printf("SHELDON PERDEU\n");
-    (strcmp(sheldon,opcoes[4])==0&&strcmp(raj,opcoes[2])==0||strcmp(raj,opcoes[0])==0) ?  printf("SHELDON GANHA\n") : printf("SHELDON PERDEU\n");
+    if (strcmp(sheldon,opcoes[0])==0)
+        (strcmp(sheldon,opcoes[0])==0&&strcmp(raj,opcoes[2])==0||strcmp(raj,opcoes[3])==0) ?  printf("SHELDON GANHA\n") : printf("SHELDON PERDEU\n");
+    if(strcmp(sheldon,opcoes[1])==0)
+        (strcmp(sheldon,opcoes[1])==0&&strcmp(raj,opcoes[0])==0||strcmp(raj,opcoes[4])==0) ?  printf("SHELDON GANHA\n") : printf("SHELDON PERDEU\n");
+    if(strcmp(sheldon,opcoes[2])==0)
+        (strcmp(sheldon,opcoes[2])==0&&strcmp(raj,opcoes[1])==0||strcmp(raj,opcoes[3])==0) ?  printf("SHELDON GANHA\n") : printf("SHELDON PERDEU\n");
+    if(strcmp(sheldon,opcoes[3])==0)
+        (strcmp(sheldon,opcoes[3])==0&&strcmp(raj,opcoes[4])==0||strcmp(raj,opcoes[1])==0) ?  printf("SHELDON GANHA\n") : printf("SHELDON PERDEU\n");
+    if(strcmp(sheldon,opcoes[4])==0)
+        (strcmp(sheldon,opcoes[4])==0&&strcmp(raj,opcoes[2])==0||strcmp(raj,opcoes[0])==0) ?  printf("SHELDON GANHA\n") : printf("SHELDON PERDEU\n");
 }
 
 /*
