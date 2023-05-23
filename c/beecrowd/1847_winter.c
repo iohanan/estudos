@@ -1,6 +1,6 @@
 /*
 @autor: iohanan;
-data: /05/2023;
+data: 16/05/2023;
 atv 1847
 */
 #include<stdio.h>
