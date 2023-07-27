@@ -1,3 +1,9 @@
-num=1.5 ; curso="CFB"
+curso="Python" ; canal="CFB"
 
-print(num, curso)
+print(canal + " " + curso)
+
+
+if 10 < 2:
+    print("Maior")
+    print("Ou menor")
+print("Eae")
