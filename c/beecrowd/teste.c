@@ -1,78 +1,39 @@
 #include<stdio.h>
-#include<string.h>
 
-char jogada (char string);
+//char troca(char *a, char b);   //testando protótipos
+void Calc(float *a, int num, float *xmin, float *xmax);
+int main(){
+     
+    float v[] = {1,2,3,4,5,6,7,8,9};
+    float Maior, Menor;
 
+    Calc(v, 9, &Menor, &Maior);
 
-
-int main ()
-{
-    int comp, x, y=1;   //controladores
-    char opcoes[5][8]={"pedra","papel","tesoura","lagarto","Spock"};
-    char string1[8];  //sheldon
-    char string2[8];    //raj
-    char sheldon[8], raj[8];
-    //char sheldon[8]=jogada(string1), raj[8]=jogada(string2);
-
-    scanf("%d", &x);
-
-    while (y<=x)
-    {
-        scanf(" %[^ ]s", string1);
-        scanf(" %[^\n]s", string2);
-
-        for (int i = 0; i < 6; i++)     //jogada do sheldon
-        {
-            if (strcmp(string1, opcoes[i])==0)
-            {
-                strcpy(sheldon, string1);
-                break;
-            }
-        }
-        
-        for (int i = 0; i < 6; i++)     //jogada do raj
-        {
-            comp=strcmp(string2, opcoes[i]);
-
-            if (comp==0)
-            {
-                strcpy(raj, string2);
-                break;
-            }
-        }
-        if(strcmp(string1,string2)==0)
-        {
-            printf("Caso #%d: De novo!\n",y);
-            y++;
-            continue;
-        }
-        if (strcmp(sheldon,opcoes[0])==0)
-            (strcmp(sheldon,opcoes[0])==0&&strcmp(raj,opcoes[2])==0||strcmp(raj,opcoes[3])==0) ?  printf("Caso #%d: Bazinga!\n",y) : printf("Caso #%d: Raj trapaceou!\n",y);
-        if(strcmp(sheldon,opcoes[1])==0)
-            (strcmp(sheldon,opcoes[1])==0&&strcmp(raj,opcoes[0])==0||strcmp(raj,opcoes[4])==0) ?  printf("Caso #%d: Bazinga!\n",y) : printf("Caso #%d: Raj trapaceou!\n",y);
-        if(strcmp(sheldon,opcoes[2])==0)
-            (strcmp(sheldon,opcoes[2])==0&&strcmp(raj,opcoes[1])==0||strcmp(raj,opcoes[3])==0) ?  printf("Caso #%d: Bazinga!\n",y) : printf("Caso #%d: Raj trapaceou!\n",y);
-        if(strcmp(sheldon,opcoes[3])==0)
-            (strcmp(sheldon,opcoes[3])==0&&strcmp(raj,opcoes[4])==0||strcmp(raj,opcoes[1])==0) ?  printf("Caso #%d: Bazinga!\n",y) : printf("Caso #%d: Raj trapaceou!\n",y);
-        if(strcmp(sheldon,opcoes[4])==0)
-            (strcmp(sheldon,opcoes[4])==0&&strcmp(raj,opcoes[2])==0||strcmp(raj,opcoes[0])==0) ?  printf("Caso #%d: Bazinga!\n",y) : printf("Caso #%d: Raj trapaceou!\n",y);
-
-        y++;
-    }
+    printf("O MAIOR numero do vetor e: %f\nO MENOR numero do vetor e: %f\n", Maior, Menor);
+     
     return 0;
 }
 
-/*
-    0 - pedra   >tesoura/lagarto
-    1 - papel   >pedra/Spock
-    2 - tesoura >papel/lagarto
-    3 - lagarto >Spock/paper
-    4 - Spock   >tesoura/pedra
+void Calc(float *a, int num, float *xmin, float *xmax)
+{
+
+    *xmin=*xmax=*a;
+
+    for (int i = 0; i < num; i++)
+    {
+        if (*xmin>a[i]) *xmin=a[i];
+        if (*xmax<a[i]) *xmax=a[i];        
+    }
+    
+}
 
 
-    0 - 2/3
-    1 - 0/4
-    2 - 1/3
-    3 - 4/1
-    4 - 2/0
-*/
+/*char troca(char*a, char b)   
+{
+    for (int i = 0; a[i]!='\0'; i++)
+    {
+        a[i] = b;
+
+    }
+        return a;
+}*/
