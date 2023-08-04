@@ -21,4 +21,3 @@ print("Cor:",c1.cor)
 estado="Sim" if c1.ligado else "Não"
 print("Ligado:", estado)
 """
-print()
