@@ -14,14 +14,17 @@ na palavra secreta.
 Faça a contagem de tentativas do seu
 usuário.
 """
-
-palavra_secreta='Testando'
+palavra_secreta='Testando'.lower()
 qtd=len(palavra_secreta)
 
-
-
+palavra = '*'*qtd
+print(palavra)
 
 letra = input('Digite uma letra: ')
 
-for letra in palavra_secreta:
-    print()
+if letra in palavra_secreta:
+    for i in palavra:
+        if palavra_secreta[i]==letra:
+            palavra[i]=letra
+
+print(palavra)
