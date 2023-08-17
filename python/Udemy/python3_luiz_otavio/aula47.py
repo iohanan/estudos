@@ -1,3 +1,4 @@
+import os
 """
 Faça um jogo para o usuário adivinhar qual
 a palavra secreta.
@@ -14,17 +15,40 @@ na palavra secreta.
 Faça a contagem de tentativas do seu
 usuário.
 """
-palavra_secreta='Testando'.lower()
+palavra_secreta='perfume'
 qtd=len(palavra_secreta)
+tentativas = 0
+letras_acertadas=''
 
-palavra = '*'*qtd
-print(palavra)
 
-letra = input('Digite uma letra: ')
+while True:
+    letra = input('Digite uma letra: ').lower()
+    os.system('cls')
+    
 
-if letra in palavra_secreta:
-    for i in palavra:
-        if palavra_secreta[i]==letra:
-            palavra[i]=letra
+    palavra_formada=''
 
-print(palavra)
+    if len(letra) > 1:
+        print('Digite apenas uma letra.')
+        print(palavra_formada)
+        continue
+    
+    if letra in palavra_secreta:    #se a letra digitada estiver na palavra secreta então
+        letras_acertadas+=letra #salvo a letra acertada nessa string
+
+    for acerto in palavra_secreta:  #percorro o vetor da palavra secreta
+        if acerto in letras_acertadas:  #a cada loop se o acerto estiver nas letras acertadas
+            palavra_formada+=acerto #o acerto é somado a palavra formada na posição correspondente 
+        else:
+            palavra_formada+='*'    #se não tiver acerto coloco *
+
+    print(f'{palavra_formada}\n')
+    tentativas+=1 
+    
+    if palavra_formada==palavra_secreta:
+        break
+
+print(f'PARABÉNS! VOCÊ ACERTOU.\n'
+
+f'Tentativas: {tentativas}'    
+)
