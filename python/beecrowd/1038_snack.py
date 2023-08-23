@@ -16,5 +16,5 @@ count=1
 for x in snacks:
     if codigo == count:
         total=x*qtd
-        print(f'Total: R${total:.2f}')
+        print(f'Total: R$ {total:.2f}')
     count+=1
