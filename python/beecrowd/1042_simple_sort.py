@@ -1,15 +1,13 @@
 a, b,c = [int(x) for x in input().split()]
 original = [a,b,c]
+
 sequencia = list(original)
-print('Original:',original)
-print('Seque:',sequencia)
+sequencia.sort()
 
-
-
-for item in sequencia:
-    print(item)
+for i in range(3):
+    print(sequencia[i])
 
 print('')
 
-for item in original:
-    print(item)
+for i in range(len(original)):
+    print(original[i])
