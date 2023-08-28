@@ -1,10 +1,10 @@
 a, b,c = [int(x) for x in input().split()]
 original = [a,b,c]
 
-sequencia = list(original)
+sequencia = original.copy()
 sequencia.sort()
 
-for i in range(3):
+for i in range(len(sequencia)):
     print(sequencia[i])
 
 print('')
