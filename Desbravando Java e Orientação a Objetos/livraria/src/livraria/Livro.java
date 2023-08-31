@@ -26,7 +26,6 @@ public class Livro {
         if (this.temAutor()) {
             autor.mostrarDetalhes();
         }
-        
         System.out.println("-------------------------------------------");
  
         }
@@ -65,7 +64,6 @@ public class Livro {
     }
     
     
-    
     public boolean descontoDe(double porcentagem){
         if (porcentagem > 0.3) {
             return false;
@@ -80,7 +78,7 @@ public class Livro {
     
     
     
-    
+        
     
     
 }

@@ -7,10 +7,10 @@ package livraria;
 public class RegrasDeDesconto {
     public static void main(String[] args) {
         Livro periodico = new Livro();
-        periodico.valor = 60.78;
+        periodico.setValor(60.78);
         
-        if(periodico.descontoDe(0.3)){
-            System.out.println("Desconto: "+periodico.valor);
+        if(periodico.descontoDe(0.4)){
+            System.out.println("Desconto: "+periodico.getValor());
         }
         
     }
