@@ -9,6 +9,11 @@ public class Autor {
     private String emailDoAutor;
     private String cpfDoAutor;
     
+    public Autor(String nomString){
+        this.nomeDoAutor = nomString;
+        
+    }
+    
     void mostrarDetalhes(){
         System.out.println("Autor");
         System.out.println("\tNome: " + nomeDoAutor);

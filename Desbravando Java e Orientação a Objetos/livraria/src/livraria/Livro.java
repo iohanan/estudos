@@ -10,11 +10,19 @@ public class Livro {
     private double valor;
     private String isbn;
     private Autor autor;
+    private boolean impresso;
+
+    public Livro(Autor autor){
+        this();
+        this.autor = autor;
+    }
+
 
     public Livro(){
-        System.out.println("Novo livro cadastrado.");
+        this.isbn = "000 - 000 - 000";
+        this.titulo = "Desconhecido";
     }
-    void mostrarDetalhes(){
+    public void mostrarDetalhes(){
         String mensagem = "Livro";
         System.out.println(mensagem);
         System.out.println("\tNome: " + titulo);
