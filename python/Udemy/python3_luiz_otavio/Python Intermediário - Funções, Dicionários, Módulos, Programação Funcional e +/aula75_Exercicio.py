@@ -11,3 +11,4 @@ valor = input('Qual a tabuada desejada? ')
 for n in range(11):
     tabuada = multiplicar(int(valor))
     print(f'{valor} x {n}  = {tabuada(n)}')
+    #coment
