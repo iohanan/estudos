@@ -10,7 +10,6 @@ public class Livro {
     private double valor;
     private String isbn;
     private Autor autor;
-    private boolean impresso;
 
     public Livro(Autor autor){
         this();
@@ -84,9 +83,7 @@ public class Livro {
         return this.autor != null;
     }
     
-    
-    
-        
+     
     
     
 }
